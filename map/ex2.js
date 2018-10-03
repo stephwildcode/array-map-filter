@@ -42,9 +42,40 @@ En sortie: [
 
  */
 
+
+const inputFoods = [
+  {
+    food: 'Bacon',
+    isVegetarian: false
+  },
+  {
+    food: 'Sausage',
+    isVegetarian: false
+  },
+  {
+    food: 'Tofu',
+    isVegetarian: true
+  },
+  {
+    food: 'Chick Pea',
+    isVegetarian: true
+  }
+];
+
 function getFoodCategories(foods) {
+  const res = foods.map(function (data) {
+    let resStr = '';
+    if (data.isVegetarian) {
+      resStr = data.food + ' is suitable for vegetarians';
+    } else {
+      resStr = data.food + ' is not suitable for vegetarians';
+    }
+    return resStr;
+  });
+  return res;
 }
 
+//console.log(getFoodCategories(inputFoods));
 
 
 // Ne pas modifier l'export

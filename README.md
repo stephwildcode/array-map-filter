@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/stephwildcode/array-map-filter.svg?branch=master)](https://travis-ci.com/stephwildcode/array-map-filter)
 # Exercices sur map et filter
 
 ## Installation

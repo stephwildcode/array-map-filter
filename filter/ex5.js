@@ -38,8 +38,28 @@ Exemple d'entrée:
 
  */
 
+const inputStr = [
+  'Mad Max: Fury Road',
+  'Interstellar',
+  'Revenge of the Nerds',
+  'Revenge of the Pink Panther',
+  'Star Wars: Episode I - The Phantom Menace',
+  'Star Wars: Episode II - Attack of the Clones',
+  'Star Wars: Episode III - Revenge of the Sith'
+];
+
+const inputWord = "revenge";
+
 function searchWordFilter(items, search) {
-}
+  const res = items.filter(function (data) {
+    if (data.toLowerCase().indexOf(search) != -1) {
+      return data;
+    }
+  });
+  return res;
+};
+
+//console.log(searchWordFilter(inputStr, inputWord));
 
 // Ne pas modifier l'export
 module.exports = searchWordFilter;

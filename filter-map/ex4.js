@@ -63,10 +63,43 @@ En prenant les deux exemples d'arguments d'entrée, on obtiendrait ceci en sorti
 
 */
 
+const inputTab = ['Badminton', 'Tennis', 'Volley-ball', 'Base-ball', 'Soccer', 'Basket-ball', 'Cycling'];
+const inputTab2 = [
+  { name: 'Jay Fox', activities: ['Badminton'] },
+  { name: 'Jenson Gardner', activities: ['Badminton', 'Tennis'] },
+  { name: 'Max Dean', activities: ['Base-ball', 'Soccer'] },
+  { name: 'Cody May', activities: ['Basket-ball', 'Base-ball'] },
+  { name: 'Nicholas Knight', activities: ['Base-ball', 'Volley-ball'] },
+  { name: 'Fletcher Estes', activities: ['Basket-ball'] },
+  { name: 'Jaydon Gallagher', activities: ['Badminton', 'Basket-ball'] },
+  { name: 'Efrain Rollins', activities: ['Volley-ball', 'Tennis'] },
+  { name: 'Tripp Cash', activities: ['Badminton'] },
+  { name: 'Ross Howard', activities: ['Cycling'] }
+];
+
 function getActivitiesMembers(activities, persons) {
-}
+  let tab = [];
+  const res = activities.map(function (data1) {
+    let obj = {};
+    obj.activity = data1;
+    return obj;
+  })
+    .map(function (data2) {
+      let lstPersons = [];
+      const res2 = persons.filter(function (data3) {
+        for (act of data3.activities) {
+          if (data2.activity === act) {
+            lstPersons.push(data3.name);
+          };
+        };
+      })
+      data2.persons = lstPersons;
+      return data2;
+    });
+  return res;
+};
 
-
+//console.log(getActivitiesMembers(inputTab, inputTab2));
 
 // Ne pas modifier l'export
 module.exports = getActivitiesMembers;
